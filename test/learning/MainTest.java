@@ -58,13 +58,11 @@ public class MainTest extends ApplicationTest
         write("hello");
         clickOn("#applyButton");
 
-//        verifyThat("#label", hasText("hello"));
-
         Label label = find("#label");
         assertThat(label.getText(), is("hello"));
     }
 
-    private <T extends Node> T find(final String query)
+    private <T extends Node> T find(String query)
     {
         return lookup(query).query();
     }
